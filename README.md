@@ -1,6 +1,6 @@
 Likes to Playlists
 ===================
-I wrote because SoundCloud removed the ability to add tracks to playlists (sets) from the mobile client. I use this extensively, so I just scripted my own workflow.
+I wrote because SoundCloud removed the ability to add tracks to playlists (sets) from the mobile client. I use this extensively, so I just scripted my own workflow. TL;DR it adds anything you've liked to the playlist for this month.
 
 Here's the logic:
 - Get all playlists (sets)
