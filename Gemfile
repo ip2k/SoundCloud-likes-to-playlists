@@ -1,0 +1,5 @@
+require 'yaml'
+require 'awesome_print'
+require 'soundcloud'
+require 'base64'
+require 'active_support'
