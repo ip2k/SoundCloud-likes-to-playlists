@@ -7,15 +7,15 @@ require 'base64'
 require 'active_support/core_ext'
 
 
-Config = YAML.load_file('oauth-details.yaml')
-page_size = 200  # pagination size. 200 is the max
+Config = YAML.load_file('oauth-config.yaml')  # OAuth User Credentials Flow. REF: https://developers.soundcloud.com/docs/api/guide#authentication
+page_size = 200  # pagination size. 200 is the max. REF: https://developers.soundcloud.com/docs/api/guide#pagination
 
 puts "Connecting to SoundCloud API..."
 # create client object with app and user credentials
 client = Soundcloud.new(:client_id => Config['client_id'],
                         :client_secret => Config['client_secret'],
                         :username => Config['username'],
-                        :password => Base64.decode64(Config['password_base64']))
+                        :password => Base64.decode64(Config['password_base64']))  # password is base64'd as not to store the passowrd in plaintext. Using encryption here would be ~pointless.
 
 # get playlists from SC
 puts "Getting your playlists..."
