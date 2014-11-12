@@ -78,7 +78,7 @@ unless favs_this_month.map(&:id).all? {|track_id| this_month_playlist.tracks.map
         :tracks => (favs_this_month.map(&:id) + this_month_playlist.tracks.map(&:id)).uniq.map { |id| {:id => id} }
       }
     )
-    puts 'OK !!!\r\n'
+    puts 'OK !!!'
     puts
   rescue
     ap this_month_playlist
@@ -92,6 +92,7 @@ end
 puts 'Favorites'
 puts '==========='
 ap favs_this_month.map(&:title)
+puts
 puts "#{Date.today.strftime("%B '%y")} (your Playlist AKA Set)"
 puts '==========================================='
 ap this_month_playlist.tracks.map(&:title)
